@@ -26,13 +26,10 @@ module.exports = (grunt) ->
     grunt.utils._.each options.config, (value, key, list) ->
       list[key] = grunt.template.process(value)  if grunt.utils._.isString(value)
 
-
-    # grunt.log.write(JSON.stringify(options));
+    # run helper
     grunt.helper "toaster", basedir, grunt.utils._.clone(options)
-    if grunt.task.current.errorCount
-      false
-    else
-      true
+
+    return if grunt.task.current.errorCount then false else true
 
   # -----------------------------------------------------------------------------------------------
   # ~ Helpers
@@ -43,6 +40,6 @@ module.exports = (grunt) ->
     try
       toasted = new Toaster(basedir, options)
       return true
-    catch e
-      grunt.log.error "Toaster error:\n" + e
+    catch error
+      grunt.log.error "Toaster error:\n" + error
       return false

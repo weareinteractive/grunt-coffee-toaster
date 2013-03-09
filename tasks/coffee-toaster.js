@@ -8,6 +8,7 @@ module.exports = function(grunt) {
     };
     basedir = process.cwd();
     options.config = grunt.utils._.extend({}, this.data || {}, grunt.config("toasterOptions") || {});
+    options = grunt.utils._.extend(options, this.data.options || {});
     grunt.utils._.each(options.config, function(value, key, list) {
       if (grunt.utils._.isString(value)) {
         return list[key] = grunt.template.process(value);
