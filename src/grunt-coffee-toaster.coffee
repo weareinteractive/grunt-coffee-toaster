@@ -16,18 +16,17 @@ module.exports = (grunt) ->
   # -----------------------------------------------------------------------------------------------
 
   grunt.registerMultiTask "toaster", "Compile folder with Coffee Toaster.", ->
-    options = c: true
-    basedir = process.cwd()
 
-    # read config
-    options.config = grunt.utils._.extend({}, @data or {}, grunt.config("toasterOptions") or {})
+    options = { c:true, config:this.data }
+
+    grunt.verbose.writeflags options, 'Options'
 
     # process template vars
-    grunt.utils._.each options.config, (value, key, list) ->
-      list[key] = grunt.template.process(value)  if grunt.utils._.isString(value)
+    grunt.util._.each options.config, (value, key, list) ->
+      if grunt.util._.isString(value) then list[key] = grunt.template.process(value)
 
-    # run helper
-    grunt.helper "toaster", basedir, grunt.utils._.clone(options)
+    # toast it
+    toast process.cwd(), options
 
     return if grunt.task.current.errorCount then false else true
 
@@ -35,10 +34,10 @@ module.exports = (grunt) ->
   # ~ Helpers
   # -----------------------------------------------------------------------------------------------
 
-  grunt.registerHelper "toaster", (basedir, options) ->
-    Toaster = require("coffee-toaster").Toaster
+  toast = (baseDir, options) ->
     try
-      toasted = new Toaster(basedir, options)
+      Toaster = require("coffee-toaster").Toaster
+      new Toaster(baseDir, options)
       return true
     catch error
       grunt.log.error "Toaster error:\n" + error

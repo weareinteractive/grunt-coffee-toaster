@@ -1,13 +1,9 @@
 {
   "name": "grunt-coffee-toaster",
   "description": "Grunt Coffee Toaster plugin.",
-  "version": "0.0.1",
+  "version": "0.1.0",
   "homepage": "https://github.com/franklin/grunt-coffee-toaster",
-  "author": {
-    "name": "franklin",
-    "email": "franklin@weareinteractive.com",
-    "url": "www.weareinteractive.com"
-  },
+  "author": "franklin <franklin@weareinteractive.com> (www.weareinteractive.com)",
   "repository": {
     "type": "git",
     "url": "git://github.com/franklin/grunt-coffee-toaster.git"
@@ -29,13 +25,14 @@
     "test": "grunt test"
   },
   "dependencies": {
-    "grunt": "*",
-    "coffee-toaster": ">=0.6.11"
+    "grunt": "*"
   },
   "devDependencies": {
-    "grunt": "~0.3.17",
-    "grunt-coffee": "~0.0.3",
-    "grunt-coffeelint": "~0.0.3"
+    "grunt": "~0.4.0",
+    "grunt-coffeelint": "~0.0.3",
+    "grunt-mocha-test": "~0.2.0",
+    "grunt-contrib-coffee": "~0.5.0",
+    "coffee-toaster": "~0.6.11"
   },
   "keywords": [
     "gruntplugin"
