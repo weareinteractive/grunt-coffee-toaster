@@ -1,38 +1,20 @@
 {
   "name": "grunt-coffee-toaster",
   "description": "Grunt Coffee Toaster plugin.",
-  "version": "0.1.0",
-  "homepage": "https://github.com/franklin/grunt-coffee-toaster",
   "author": "franklin <franklin@weareinteractive.com> (www.weareinteractive.com)",
-  "repository": {
-    "type": "git",
-    "url": "git://github.com/franklin/grunt-coffee-toaster.git"
-  },
-  "bugs": {
-    "url": "https://github.com/franklin/grunt-coffee-toaster/issues"
-  },
-  "licenses": [
-    {
-      "type": "MIT",
-      "url": "https://github.com/franklin/grunt-coffee-toaster/blob/master/LICENSE-MIT"
-    }
-  ],
-  "main": "grunt.coffee",
+  "main": "Gruntfile.coffee",
+  "version": "0.2.0",
   "engines": {
-    "node": "*"
-  },
-  "scripts": {
-    "test": "grunt test"
-  },
-  "dependencies": {
-    "grunt": "*"
+    "node": ">= 0.6.0"
   },
   "devDependencies": {
-    "grunt": "~0.4.0",
-    "grunt-coffeelint": "~0.0.3",
-    "grunt-mocha-test": "~0.2.0",
-    "grunt-contrib-coffee": "~0.5.0",
-    "coffee-toaster": "~0.6.11"
+    "grunt": "~0.4.1",
+    "grunt-coffeelint": "~0.0.7",
+    "grunt-contrib-coffee": "~0.7.0",
+    "grunt-mocha-test": "~0.6.3",
+    "grunt-contrib-watch": "~0.5.3",
+    "chai": "~1.7.2",
+    "blanket": "~1.1.5"
   },
   "keywords": [
     "gruntplugin"

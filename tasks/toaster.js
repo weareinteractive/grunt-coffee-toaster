@@ -1,4 +1,3 @@
-
 module.exports = function(grunt) {
   "use strict";
   var toast;
@@ -22,12 +21,13 @@ module.exports = function(grunt) {
     }
   });
   return toast = function(baseDir, options) {
-    var Toaster;
+    var Toaster, error;
     try {
       Toaster = require("coffee-toaster").Toaster;
       new Toaster(baseDir, options);
       return true;
-    } catch (error) {
+    } catch (_error) {
+      error = _error;
       grunt.log.error("Toaster error:\n" + error);
       return false;
     }

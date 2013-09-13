@@ -2,36 +2,41 @@ module.exports = (grunt) ->
 
   # Project configuration.
   grunt.initConfig
-    pkg: grunt.file.readJSON('package.json')
+    pkg: grunt.file.readJSON "package.json"
 
     coffeelint:
-      files: [
-        "src/**/*.coffee"
-        "test/**/*.coffee"
-      ]
+      files: ["Gruntfile.coffee", "src/**/*.coffee", "test/**/*.coffee"]
       options:
         max_line_length:
           value: 200
           level: "error"
 
     coffee:
-      build:
+      tasks:
         files:
-          "tasks/<%= pkg.name %>.js": "src/**/*.coffee"
+          "tasks/toaster.js": "src/toaster.coffee"
         options:
           bare: true
 
     mochaTest:
-      files: [
-        'test/**/*.test.coffee'
-      ]
+      test:
+        options:
+          bail: true
+          ui: 'exports'
+          timeout: 10000
+          reporter: 'TAP'
+          require: 'test/coverage'
+        src: ['test/**/*.coffee']
+      coverage:
+        options:
+          quiet: true
+          reporter: 'html-cov'
+          captureFile: 'test/coverage.html'
+        src: ['test/**/*.test.coffee']
 
-    mochaTestConfig:
-      options:
-        compilers: 'coffee:coffee-script'
-        reporter: 'list'
-        bail: true
-        ui: 'bdd'
+    watch:
+      files: ["src/**/*.test.coffee"]
+      tasks: "default"
 
   # Load local tasks.
   grunt.loadTasks "tasks"
