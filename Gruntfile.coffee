@@ -1,4 +1,5 @@
 module.exports = (grunt) ->
+  'use strict'
 
   # Project configuration.
   grunt.initConfig
@@ -13,10 +14,21 @@ module.exports = (grunt) ->
 
     coffee:
       tasks:
-        files:
-          "tasks/toaster.js": "src/toaster.coffee"
         options:
           bare: true
+        files:
+          "tasks/toaster.js": "src/toaster.coffee"
+
+    clean:
+      test:
+        src: ["test/tmp/*"]
+
+    toaster:
+      test:
+        bare: false
+        minify: false
+        folders: "test/fixtures/src": null
+        release: "test/tmp/test.js"
 
     mochaTest:
       test:
@@ -24,28 +36,26 @@ module.exports = (grunt) ->
           bail: true
           ui: 'exports'
           timeout: 10000
-          reporter: 'TAP'
-          require: 'test/coverage'
-        src: ['test/**/*.coffee']
-      coverage:
-        options:
-          quiet: true
-          reporter: 'html-cov'
-          captureFile: 'test/coverage.html'
         src: ['test/**/*.test.coffee']
 
-    watch:
-      files: ["src/**/*.test.coffee"]
-      tasks: "default"
+    bump:
+      options:
+        pushTo: 'origin'
+        commitFiles: ['-a']
+        updateConfigs: ['pkg']
+        files: ['package.json']
 
-  # Load local tasks.
+
+  # Actually load this plugin's task(s).
   grunt.loadTasks "tasks"
 
   # Load npm tasks.
   grunt.loadNpmTasks 'grunt-coffeelint'
-  grunt.loadNpmTasks "grunt-mocha-test"
+  grunt.loadNpmTasks 'grunt-contrib-clean'
   grunt.loadNpmTasks "grunt-contrib-coffee"
+  grunt.loadNpmTasks "grunt-mocha-test"
+  grunt.loadNpmTasks "grunt-bump"
 
   # Default task.
   grunt.registerTask 'default', ['coffeelint', 'coffee']
-  grunt.registerTask 'test', ['coffeelint', 'coffee', 'mochaTest']
+  grunt.registerTask 'test', ['default', 'clean', 'toaster', 'mochaTest']

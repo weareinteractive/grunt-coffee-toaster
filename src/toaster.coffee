@@ -1,10 +1,10 @@
-#
-# * grunt-toaster
-# * https://github.com/franklin/grunt-coffee-toaster
-# *
-# * Copyright (c) 2013 franklin
-# * Licensed under the MIT license.
-#
+###
+grunt-coffee-toaster
+https://github.com/weareinteractive/grunt-coffee-toaster
+
+Copyright (c) 2013 We Are Interactive
+Licensed under the MIT license.
+###
 module.exports = (grunt) ->
   "use strict"
 
@@ -15,7 +15,7 @@ module.exports = (grunt) ->
   # ~ Tasks
   # -----------------------------------------------------------------------------------------------
 
-  grunt.registerMultiTask "toaster", "Compile folder with Coffee Toaster.", ->
+  grunt.registerMultiTask "toaster", "Compile sources with Coffee Toaster.", ->
 
     options = { c:true, config:this.data }
 

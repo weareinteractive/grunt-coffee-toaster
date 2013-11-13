@@ -1,7 +1,7 @@
 module.exports = function(grunt) {
   "use strict";
   var toast;
-  grunt.registerMultiTask("toaster", "Compile folder with Coffee Toaster.", function() {
+  grunt.registerMultiTask("toaster", "Compile sources with Coffee Toaster.", function() {
     var options;
     options = {
       c: true,
