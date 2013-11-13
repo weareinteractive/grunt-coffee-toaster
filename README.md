@@ -1,6 +1,6 @@
 # grunt-coffee-toaster
 
-[![Build Status](https://travis-ci.org/weareinteractive/grunt-coffee-toaster.png?branch=master)](https://travis-ci.org/weareinteractive/grunt-coffee-toaster) [![devDependency Status](https://david-dm.org/weareinteractive/grunt-coffee-toaster/dev-status.png)](https://david-dm.org/weareinteractive/grunt-coffee-toaster#info=devDependencies)
+[![Build Status](https://travis-ci.org/weareinteractive/grunt-coffee-toaster.png?branch=master)](https://travis-ci.org/weareinteractive/grunt-coffee-toaster) [![Dependency Status](https://david-dm.org/weareinteractive/grunt-coffee-toaster.png)](https://david-dm.org/weareinteractive/grunt-coffee-toaster) [![devDependency Status](https://david-dm.org/weareinteractive/grunt-coffee-toaster/dev-status.png)](https://david-dm.org/weareinteractive/grunt-coffee-toaster#info=devDependencies)
 
 > Grunt [Coffee Toaster](https://github.com/serpentem/coffee-toaster) plugin.
 
