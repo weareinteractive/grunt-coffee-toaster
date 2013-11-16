@@ -1,6 +1,7 @@
 .*
 *~
-/node_modules
-/test/tmp
+/test/tmp/
+/node_modules/
 !.travis.yml
+!.npmignore
 !.git*
