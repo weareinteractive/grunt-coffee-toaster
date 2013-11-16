@@ -1,8 +1,9 @@
 # grunt-coffee-toaster
 
-[![Build Status](https://travis-ci.org/weareinteractive/grunt-coffee-toaster.png?branch=master)](https://travis-ci.org/weareinteractive/grunt-coffee-toaster) [![Dependency Status](https://david-dm.org/weareinteractive/grunt-coffee-toaster.png)](https://david-dm.org/weareinteractive/grunt-coffee-toaster) [![devDependency Status](https://david-dm.org/weareinteractive/grunt-coffee-toaster/dev-status.png)](https://david-dm.org/weareinteractive/grunt-coffee-toaster#info=devDependencies)
+[![Build Status](https://travis-ci.org/weareinteractive/grunt-coffee-toaster.png?branch=master)](https://travis-ci.org/weareinteractive/grunt-coffee-toaster)
+[![Dependency Status](https://gemnasium.com/weareinteractive/grunt-coffee-toaster.png)](https://gemnasium.com/weareinteractive/grunt-coffee-toaster)
 
-> Grunt [Coffee Toaster](https://github.com/serpentem/coffee-toaster) plugin.
+> Grunt for [CoffeeScript Toaster](https://github.com/serpentem/coffee-toaster).
 
 ## Getting Started
 
@@ -11,13 +12,13 @@ This plugin requires Grunt `~0.4.1`
 If you haven't used [Grunt](http://gruntjs.com/) before, be sure to check out the [Getting Started](http://gruntjs.com/getting-started) guide, as it explains how to create a [Gruntfile](http://gruntjs.com/sample-gruntfile) as well as install and use Grunt plugins. Once you're familiar with that process, you may install this plugin with this command:
 
 ```shell
-npm install grunt-styledocco --save-dev
+npm install grunt-coffee-toaster --save-dev
 ```
 
 Once the plugin has been installed, it may be enabled inside your Gruntfile with this line of JavaScript:
 
 ```js
-grunt.loadNpmTasks('grunt-styledocco');
+grunt.loadNpmTasks('grunt-coffee-toaster');
 ```
 
 ## The "toaster" Task
@@ -28,7 +29,7 @@ grunt.loadNpmTasks('grunt-styledocco');
 
 ### Options
 
-All options are directly passed to *Coffee Toaster*!
+All options are directly passed to *CoffeeScript Toaster*!
 Please see the [Coffee Toaster documentation](https://github.com/serpentem/coffee-toaster) for all available options.
 
 ### Examples
@@ -59,4 +60,4 @@ Check out the [Coffee Toaster](https://github.com/serpentem/coffee-toaster) for 
 In lieu of a formal styleguide, take care to maintain the existing coding style. Add unit tests for any new or changed functionality. Lint and test your code using [Grunt](http://gruntjs.com/).
 
 ## License
-Copyright (c) We Are Interactive under the [MIT licenses](https://github.com/weareinteractive/grunt-coffee-toaster/blob/master/LICENSE)
+Copyright (c) We Are Interactive under the MIT license.
