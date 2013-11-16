@@ -5,8 +5,10 @@ https://github.com/weareinteractive/grunt-coffee-toaster
 Copyright (c) 2013 We Are Interactive
 Licensed under the MIT license.
 ###
+
+"use strict"
+
 module.exports = (grunt) ->
-  "use strict"
 
   # Please see the grunt documentation for more information regarding task and
   # helper creation: https://github.com/cowboy/grunt/blob/master/docs/toc.md
