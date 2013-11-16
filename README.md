@@ -3,7 +3,7 @@
 [![Build Status](https://travis-ci.org/weareinteractive/grunt-coffee-toaster.png?branch=master)](https://travis-ci.org/weareinteractive/grunt-coffee-toaster)
 [![Dependency Status](https://gemnasium.com/weareinteractive/grunt-coffee-toaster.png)](https://gemnasium.com/weareinteractive/grunt-coffee-toaster)
 
-> Grunt for [CoffeeScript Toaster](https://github.com/serpentem/coffee-toaster).
+> Grunt for [Coffee Toaster](https://github.com/serpentem/coffee-toaster).
 
 ## Getting Started
 
@@ -42,7 +42,7 @@ grunt.initConfig({
     dist: {
       bare: false,
       minify: false,
-      folders: { "src":null },
+      folders: { "src":"app" },
       release: "bin"
     }
   }

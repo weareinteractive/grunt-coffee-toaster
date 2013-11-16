@@ -36,16 +36,19 @@ module.exports = (grunt) ->
       test:
         bare: false
         minify: false
-        folders: "test/fixtures/src": null
+        folders: "test/fixtures":"app"
         release: "test/tmp/test.js"
 
-    mochaTest:
-      test:
+    mochacov:
+      options:
+        bail: true
+        ui: 'exports'
+        require: 'coffee-script'
+        compilers: ['coffee:coffee-script']
+        files: 'test/specs/**/*.coffee'
+      all:
         options:
-          bail: true
-          ui: 'exports'
-          timeout: 10000
-        src: ['test/specs/**/*.test.coffee']
+          reporter: 'spec'
 
     bump:
       options:
@@ -59,12 +62,12 @@ module.exports = (grunt) ->
   grunt.loadTasks "tasks"
 
   # Load npm tasks.
+  grunt.loadNpmTasks "grunt-mocha-cov"
   grunt.loadNpmTasks 'grunt-coffeelint'
   grunt.loadNpmTasks 'grunt-contrib-clean'
   grunt.loadNpmTasks "grunt-contrib-coffee"
-  grunt.loadNpmTasks "grunt-mocha-test"
   grunt.loadNpmTasks "grunt-bump"
 
   # Default task.
   grunt.registerTask 'default', ['coffeelint', 'coffee']
-  grunt.registerTask 'test', ['default', 'clean', 'toaster', 'mochaTest']
+  grunt.registerTask 'test', ['default', 'clean', 'toaster', 'mochacov']

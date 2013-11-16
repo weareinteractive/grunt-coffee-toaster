@@ -13,4 +13,4 @@ module.exports =
   "Test #toaster":
     "was successful": () ->
       assert.isTrue grunt.file.exists('test/tmp/test.js')
-      assert.equal grunt.file.read('test/tmp/test.js'), grunt.file.read('test/fixtures/expected.js')
+      assert.equal grunt.file.read('test/tmp/test.js'), grunt.file.read('test/expected/foo.js')

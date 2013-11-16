@@ -1,5 +1,13 @@
+/*
+grunt-coffee-toaster
+https://github.com/weareinteractive/grunt-coffee-toaster
+
+Copyright (c) 2013 We Are Interactive
+Licensed under the MIT license.
+*/
+
+"use strict";
 module.exports = function(grunt) {
-  "use strict";
   var toast;
   grunt.registerMultiTask("toaster", "Compile sources with Coffee Toaster.", function() {
     var options;

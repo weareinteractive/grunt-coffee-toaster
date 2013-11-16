@@ -1,9 +1,8 @@
-var foo = {};
+var app = {'foo':{}};
 
 (function() {
-  var Foo;
 
-  Foo = (function() {
+  app.Foo = (function() {
 
     function Foo() {}
 
@@ -15,7 +14,7 @@ var foo = {};
 
   })();
 
-  foo.Bar = (function() {
+  app.foo.Bar = (function() {
 
     function Bar() {}
 
