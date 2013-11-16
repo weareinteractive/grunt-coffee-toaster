@@ -1,7 +1,7 @@
 {
   "name": "grunt-coffee-toaster",
   "version": "0.1.0",
-  "description": "Grunt Coffee Toaster plugin.",
+  "description": "Grunt for CoffeeScript Toaster.",
   "author": {
     "name": "franklin",
     "email": "franklin@weareinteractive.com",
@@ -10,8 +10,10 @@
   "keywords": [
     "gruntplugin",
     "coffee-toaster",
-    "coffee script",
-    "coffee"
+    "coffeescript",
+    "namespace",
+    "build",
+    "tool"
   ],
   "repository": {
     "type": "git",
@@ -43,5 +45,8 @@
   },
   "scripts": {
     "test": "grunt test"
+  },
+  "peerDependencies": {
+    "grunt": "~0.4.1"
   }
 }
