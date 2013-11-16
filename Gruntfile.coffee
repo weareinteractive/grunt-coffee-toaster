@@ -1,5 +1,14 @@
+###
+grunt-coffee-toaster
+https://github.com/weareinteractive/grunt-coffee-toaster
+
+Copyright (c) 2013 We Are Interactive
+Licensed under the MIT license.
+###
+
+"use strict"
+
 module.exports = (grunt) ->
-  'use strict'
 
   # Project configuration.
   grunt.initConfig
@@ -36,7 +45,7 @@ module.exports = (grunt) ->
           bail: true
           ui: 'exports'
           timeout: 10000
-        src: ['test/**/*.test.coffee']
+        src: ['test/specs/**/*.test.coffee']
 
     bump:
       options:
