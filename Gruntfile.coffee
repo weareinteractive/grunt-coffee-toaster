@@ -15,7 +15,7 @@ module.exports = (grunt) ->
     pkg: grunt.file.readJSON "package.json"
 
     coffeelint:
-      files: ["Gruntfile.coffee", "src/**/*.coffee", "test/**/*.coffee"]
+      files: ["Gruntfile.coffee", "tasks/**/*.coffee", "test/**/*.coffee"]
       options:
         max_line_length:
           value: 200
