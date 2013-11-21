@@ -21,13 +21,6 @@ module.exports = (grunt) ->
           value: 200
           level: "error"
 
-    coffee:
-      tasks:
-        options:
-          bare: true
-        files:
-          "tasks/toaster.js": "src/toaster.coffee"
-
     clean:
       test:
         src: ["test/tmp/*"]
@@ -39,35 +32,34 @@ module.exports = (grunt) ->
         folders: "test/fixtures":"app"
         release: "test/tmp/test.js"
 
+    # Unit tests.
     mochacov:
       options:
         bail: true
-        ui: 'exports'
-        require: 'coffee-script'
-        compilers: ['coffee:coffee-script']
-        files: 'test/specs/**/*.coffee'
+        ui: "exports"
+        require: "coffee-script"
+        compilers: ["coffee:coffee-script"]
+        files: "test/specs/**/*.coffee"
       all:
         options:
-          reporter: 'spec'
+          reporter: "spec"
 
-    bump:
+    # Deployment
+    bumper:
       options:
-        pushTo: 'origin'
-        commitFiles: ['-a']
-        updateConfigs: ['pkg']
-        files: ['package.json']
-
+        tasks: ["default"]
+        files: ["package.json"]
+        updateConfigs: ["pkg"]
 
   # Actually load this plugin's task(s).
   grunt.loadTasks "tasks"
 
   # Load npm tasks.
   grunt.loadNpmTasks "grunt-mocha-cov"
-  grunt.loadNpmTasks 'grunt-coffeelint'
-  grunt.loadNpmTasks 'grunt-contrib-clean'
-  grunt.loadNpmTasks "grunt-contrib-coffee"
-  grunt.loadNpmTasks "grunt-bump"
+  grunt.loadNpmTasks "grunt-coffeelint"
+  grunt.loadNpmTasks "grunt-contrib-clean"
+  grunt.loadNpmTasks "grunt-bumper"
 
-  # Default task.
-  grunt.registerTask 'default', ['coffeelint', 'coffee']
-  grunt.registerTask 'test', ['default', 'clean', 'toaster', 'mochacov']
+  # Task.
+  grunt.registerTask "default", ["coffeelint"]
+  grunt.registerTask "test", ["default", "clean", "toaster", "mochacov"]
