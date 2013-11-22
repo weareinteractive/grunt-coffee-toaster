@@ -27,14 +27,14 @@ grunt.loadNpmTasks('grunt-coffee-toaster');
 
 > Coffee Toaster is a minimalist build system for CoffeeScript, made for those who dare to use class definitions in CoffeeScript while being able to easily inherit from external files. The system is powered with import directives that uses wildcards facilities, exposed scopes, excluded files filter options and a packaging system that can inject your folders-as-namespaces to all your classes based on where they are under your src folder.
 
-### Options
+## Options
 
 All options are directly passed to *CoffeeScript Toaster*!
 Please see the [Coffee Toaster documentation](https://github.com/serpentem/coffee-toaster) for all available options.
 
-### Examples
+## Usage Examples
 
-#### Example config
+Compile sources from `src/app` to `bin/app.js`.
 
 ```javascript
 grunt.initConfig({
@@ -42,8 +42,8 @@ grunt.initConfig({
     dist: {
       bare: false,
       minify: false,
-      folders: { "src":"app" },
-      release: "bin"
+      folders: { "src/app":"app" },
+      release: "bin/app.js"
     }
   }
 });
@@ -52,9 +52,6 @@ grunt.loadNpmTasks('grunt-coffee-toaster');
 
 grunt.registerTask('default', ['toaster']);
 ```
-
-## Documentation
-Check out the [Coffee Toaster](https://github.com/serpentem/coffee-toaster) for further reading.
 
 ## Contributing
 In lieu of a formal styleguide, take care to maintain the existing coding style. Add unit tests for any new or changed functionality. Lint and test your code using [Grunt](http://gruntjs.com/).
