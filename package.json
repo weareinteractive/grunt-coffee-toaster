@@ -35,7 +35,7 @@
     "grunt-mocha-cov": "~0.2",
     "coffee-script": "~1.7",
     "grunt-bumper": "~1.0",
-    "grunt": "~0.4.1"
+    "grunt": "~0.4"
   },
   "dependencies": {
     "coffee-toaster": "~0.6"
